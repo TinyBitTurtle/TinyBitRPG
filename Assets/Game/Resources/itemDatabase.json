@@ -1,0 +1,17 @@
+{   "cDataSet":[      {
+         "item":"sword",
+         "ID":1,
+         "name":"item1",
+         "HP":15,
+         "type":"offense",
+         "ATK":20
+      },
+      {
+         "item":"shield",
+         "ID":2,
+         "name":"item2",
+         "HP":100,
+         "type":"defense",
+         "ATK":5
+      }
+    ]}
