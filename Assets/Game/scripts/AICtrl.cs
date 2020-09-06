@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TinyBitTurtle
 {
-    public class AICtrl : CharacterCtrl
+    public class AICtrl : ActorCtrl
     {
         public Transform playerTransform;
 

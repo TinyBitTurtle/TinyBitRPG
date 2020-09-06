@@ -1,11 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.Events;
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using UnityEngine;
 
 namespace TinyBitTurtle
 {
@@ -20,8 +13,8 @@ namespace TinyBitTurtle
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             // create sprites
-            FX1 = Instantiate(templateGO1, GameCtrl.Instance.player.gameObject.transform.position, Quaternion.identity);
-            FX2 = Instantiate(templateGO2, GameCtrl.Instance.player.gameObject.transform.position, Quaternion.identity);
+            FX1 = Instantiate(templateGO1, GameCtrl.Instance.character.gameObject.transform.position, Quaternion.identity);
+            FX2 = Instantiate(templateGO2, GameCtrl.Instance.character.gameObject.transform.position, Quaternion.identity);
         }
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

@@ -7,7 +7,7 @@ namespace TinyBitTurtle
     {
         public GameSettings settings;
         public GameObject cursor;
-        public Character player;
+        public Actor character;
 
         protected GameData data;
 
@@ -35,7 +35,7 @@ namespace TinyBitTurtle
         {
             // default character class
             //player = CharacterFactory.Instance.Create(CharacterType.fighter);
-            player.Init();
+           character.Init();
 
             // fill the pool
             enemySpawner.Init();
@@ -44,14 +44,14 @@ namespace TinyBitTurtle
         public void Setup()
         {
             // default character class
-            player.Setup();
+            character.Setup();
 
             // cache the player level
             //int playerLevel = player.GetLevel();
 
             //GetRandomCreature(playerLevel);
 
-            //Character newEnemy = CharacterFactory.Instance.Create(CharacterType.skeleton);
+            //Actor newEnemy = CharacterFactory.Instance.Create(CharacterType.skeleton);
             //newEnemy.Init(playerLevel);
 
             //enemyList.Add(newEnemy);
@@ -169,11 +169,11 @@ namespace TinyBitTurtle
             SetupChests(gameInit, level, pos, dim);
         }
 
-        public void onShowStats(CharacterCtrl characterCtrl)
+        public void onShowStats(ActorCtrl characterCtrl)
         {
         }
 
-        public void onSelect(Character character)
+        public void onSelect(Actor character)
         {
             // if user
             ShowAggroRange(character);
@@ -181,28 +181,28 @@ namespace TinyBitTurtle
             //ShowStatsPanel();
         }
 
-        public void onAttack(Character character)
+        public void onAttack(Actor character)
         {
             // characterCtrl.GetHit(dmgAmount)
         }
 
-        public void onOpen(Character character)
+        public void onOpen(Actor character)
         {
             //characterCtrl.Open(chest instance)
         }
 
-        public void onMove(Character character)
+        public void onMove(Actor character)
         {
-            if(player == null)
+            if(character == null)
                 return;
 
-            player.onMove(character);
+            character.onMove(character);
 
             // check proximity of pickables
             //ProximityCtrl.Instance.isInRange(characterCtrl.transform.position);
         }
 
-        public void onTogleAltMode(Character character)
+        public void onTogleAltMode(Actor character)
         {
             // flip the mode
             character.mode = (Mode)((int)(++character.mode) % (int)(Mode.Max));
@@ -214,7 +214,7 @@ namespace TinyBitTurtle
             character.onSwitchCharacter(className);
         }
 
-        private void ShowAggroRange(Character character)
+        private void ShowAggroRange(Actor character)
         {
             //characterCtrl.aggroRange;
         }

@@ -1,6 +1,6 @@
 ﻿namespace TinyBitTurtle
 {
-    public class Enemy : Character
+    public class Enemy : Actor
     {
         protected override void HPChanged(int amount)
         {

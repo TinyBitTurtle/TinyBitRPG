@@ -9,12 +9,12 @@ namespace TinyBitTurtle
         public AICtrl AIControl;
 
         // delegate doesn't shpw up in the editor
-        public delegate void PlayerAction(Character character);
+        public delegate void PlayerAction(Actor character);
         private PlayerAction playerAction;
 
         [SerializeField]
         private Cursor cursor;
-        private Character character = null;
+        private Actor character = null;
 
         private void OnEnable()
         {
@@ -34,7 +34,7 @@ namespace TinyBitTurtle
             RaycastHit2D hit2D = Physics2D.Raycast(pos, Vector2.zero);
             if (hit2D.collider)
             {
-                character = hit2D.collider.GetComponent<Character>();
+                character = hit2D.collider.GetComponent<Actor>();
                 tag = hit2D.collider.gameObject.tag;
 
                 // playable character

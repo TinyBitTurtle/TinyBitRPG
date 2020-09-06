@@ -2,7 +2,7 @@
 
 namespace TinyBitTurtle
 {
-    public class PlayerCtrl : CharacterCtrl
+    public class PlayerCtrl : ActorCtrl
     {
         public GameObject template;
         private bool isMoving;
@@ -17,12 +17,14 @@ namespace TinyBitTurtle
             base.Setup();
 
             playerObject = GameObject.FindGameObjectWithTag("Player");
-            
+
+            Actor actor = playerObject.GetComponent<Actor>();
+            actor.Init();
 
             if (gridPlayer2D == null)
             {
                gridPlayer2D = playerObject.GetComponent<GridPlayer2D>();
-               gridPlayer2D.speed = playerObject.GetComponent<Character>().GetStat("SPD");
+               gridPlayer2D.speed = playerObject.GetComponent<Actor>().GetStat("SPD");
             }
 
             ProximityCtrl.Instance.Init();
@@ -50,17 +52,20 @@ namespace TinyBitTurtle
                 goingRight = horizontalInput > 0.5f ? true : false;
             }
 
-            character.animator.SetFloat("moveX", horizontalInput);
-            character.animator.SetFloat("moveY", verticalInput);
-            character.animator.SetBool("isMoving", isMoving);
-            character.animator.SetFloat("lastMoveX", lastMove.x);
-            character.animator.SetFloat("lastMoveY", lastMove.y);
+            if (character && character.animator)
+            {
+                character.animator.SetFloat("moveX", horizontalInput);
+                character.animator.SetFloat("moveY", verticalInput);
+                character.animator.SetBool("isMoving", isMoving);
+                character.animator.SetFloat("lastMoveX", lastMove.x);
+                character.animator.SetFloat("lastMoveY", lastMove.y);
+            }
 
             if (isMoving)
                 ProximityCtrl.Instance.UpdateProximity(playerObject.transform.position);
         }
 
-        public override void onMove(Character character)
+        public override void onMove(Actor character)
         {
             base.onMove(character);
 

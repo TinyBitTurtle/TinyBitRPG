@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class GenericGrid<T> : MonoBehaviour
+public abstract class GenericGrid<T> : ScriptableObject
 {
     public Vector2Int gridSize;
     public T defaultNode;

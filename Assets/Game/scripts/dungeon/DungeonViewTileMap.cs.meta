@@ -1,9 +1,13 @@
 fileFormatVersion: 2
-guid: cdf3de80ec6d44343a3de2f38ebc0f75
+guid: 046fdd52b22baef4982d9e38d3adbf8f
+timeCreated: 1510944719
+licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dungeonMaterial: {instanceID: 0}
+  - colorGradient: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

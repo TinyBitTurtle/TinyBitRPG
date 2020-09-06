@@ -73,7 +73,7 @@ namespace TinyBitTurtle
             GridPlayer2D gridPlayer2D = newGameObject.GetComponent<GridPlayer2D>() as GridPlayer2D;
             if (gridPlayer2D)
             {
-                Character character = newGameObject.GetComponent<Character>() as Character;
+                Actor character = newGameObject.GetComponent<Actor>() as Actor;
                 if(character)
                     character.control.Setup();
             }
